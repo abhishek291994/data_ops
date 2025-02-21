@@ -1,10 +1,10 @@
 name: Run Code Tests
 
 on:
-  push:
-    branches:
-      - main
 
+  pull_request:
+    branches:
+      - main  # Trigger only for pull requests targeting 'main'
 jobs:
   test:
     runs-on: ubuntu-latest
