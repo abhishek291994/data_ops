@@ -1,18 +1,18 @@
 import pandas as pd
 import pytest
+
 # from helper import get_counts_by_gender
 import os
 
 from src.helper import get_counts_by_gender
 
 # Add the src directory to the sys.path to ensure modules can be found
-#sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
+# sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
+
 
 def test_get_counts_by_gender():
     # Create a sample DataFrame
-    data = {
-        "Sex": ["male", "female", "male", "female", "male", "female", "male"]
-    }
+    data = {"Sex": ["male", "female", "male", "female", "male", "female", "male"]}
     df = pd.DataFrame(data)
 
     # Expected output
