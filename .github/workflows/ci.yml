@@ -1,10 +1,10 @@
 name: Run Code Tests
 
 on:
-
   pull_request:
     branches:
       - main  # Trigger only for pull requests targeting 'main'
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -18,16 +18,12 @@ jobs:
         with:
           python-version: "3.9"
 
-      - name: Install dependencies
+      - name: Install dependencies and run tests
         run: |
           python -m venv venv
           source venv/bin/activate
           pip install --upgrade pip
           pip install -r requirements.txt
-
-      - name: Run tests
-        run: |
-          source venv/bin/activate
           pytest titanic_ops/tests
 
   lint:
@@ -35,21 +31,17 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4  # align versions of checkout action
+        uses: actions/checkout@v4
         
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
 
-      - name: Install dependencies
+      - name: Install dependencies and run lint
         run: |
           python -m venv venv
           source venv/bin/activate
           pip install --upgrade pip
           pip install -r requirements.txt
-
-      - name: Run Black
-        run: |
-          source venv/bin/activate  # ensure the environment is activated for linting
-          black --check --diff .   # This will check the formatting and show diffs if any
+          black --check --diff .  # This will check the formatting and show diffs if any
