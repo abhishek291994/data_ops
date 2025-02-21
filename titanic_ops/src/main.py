@@ -24,5 +24,5 @@ gender_counts = df["Sex"].value_counts().to_dict()
 print(gender_counts)
 
 
+<<<<<<< HEAD
 print("This pr changes")
-
