@@ -26,5 +26,3 @@ print(gender_counts)
 print("This pr changes")
 
 print("end of process")
-
-
