@@ -5,6 +5,10 @@ on:
     branches:
       - main  # Trigger only for pull requests targeting 'main'
 
+  push:
+    branches:
+      - 'hotfix-*'  # Trigger for pushes to branches starting with 'hotfix-'
+
 jobs:
   test:
     runs-on: ubuntu-latest
