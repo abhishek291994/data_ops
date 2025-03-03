@@ -9,3 +9,6 @@ jobs:
   trigger-ci:
     name: Running CI pipeline
     uses: ./.github/workflows/CI.yml  # Calls the reusable workflow
+
+
+#next steps would be to add the release pipelines here
