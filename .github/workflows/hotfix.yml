@@ -8,4 +8,4 @@ on:
 jobs:
   trigger-ci:
     name: Running CI pipeline
-    uses: ./.github/workflows/CI.yml  # Calls the reusable workflow
+    uses: ./.github/workflows/ci.yml  # Calls the reusable workflow
