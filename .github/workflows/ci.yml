@@ -1,6 +1,8 @@
 name: Run Code Tests
 
 on:
+  workflow_call:  # Allows other workflows to call this one
+  
   pull_request:
     branches:
       - main  # Trigger only for pull requests targeting 'main'
