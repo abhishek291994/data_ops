@@ -1,9 +1,15 @@
 name: Run Code Tests
 
 on:
+  workflow_call:  # Allows other workflows to call this one
+  
   pull_request:
     branches:
       - main  # Trigger only for pull requests targeting 'main'
+
+  push:
+    branches:
+      - 'hotfix-*'  # Trigger for pushes to branches starting with 'hotfix-'
 
 jobs:
   test:
