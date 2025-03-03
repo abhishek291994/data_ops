@@ -1,0 +1,12 @@
+name: Hotfix Process
+
+on:
+  push:
+    branches:
+      - 'hotfix-*'  # Matches any branch that starts with 'hotfix-'
+
+jobs:
+  trigger-ci:
+    name: Running CI pipeline
+    uses: ./.github/workflows/CI.yml
+
